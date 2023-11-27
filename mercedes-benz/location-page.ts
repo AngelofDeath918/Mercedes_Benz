@@ -28,6 +28,8 @@ export class LocationPage {
     ////////////////////
     //// NAVIGATION ////
     ////////////////////
+
+    //Navitate to the URL
     async navToMainBaseUrl() {
         await this.page.goto('en-au/shop/vehicle/srp/demo?sort=relevance-demo&assortment=vehicle')
         await this.page.waitForLoadState()
@@ -40,6 +42,7 @@ export class LocationPage {
     ////// STEPS ///////
     ////////////////////
 
+    //Select the data in the location Form
     async fillLocationForm() {
         await this.page.waitForLoadState()
         await this.state.selectOption('Western Australia')
@@ -53,6 +56,7 @@ export class LocationPage {
     ////////////////////
     //// ASSERTIONS ////
     ////////////////////
+
     async checkLocationForm() {
         await expect(this.locationForm).toBeVisible()
     }

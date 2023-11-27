@@ -39,15 +39,18 @@ export class VehiclePage {
     ////// STEPS ///////
     ////////////////////
 
+    // Select the pre-owned Option
     async ownedTab() {
         await this.filterBtn.click()
         await this.preOwnedtab.click()
         await this.page.waitForLoadState()
     }
 
+    // Sort by the price to get the most expensive as first
     async sortAction() {
         await this.sortList.selectOption('price-desc-ucos')
     }
+
 
     async fillForm() {
         const formData = await test.step('Given information for the form', async () => {
@@ -59,6 +62,8 @@ export class VehiclePage {
         })
     }
 
+    // Save the VIN and model data into a json file 
+    // Reading the API with the "Car ID"
     async saveInformation() {
         await this.page.locator('a').filter({ hasText: 'Explore' }).first().click();
         const jsonResponse = await this.page.evaluate(() => {
@@ -76,6 +81,7 @@ export class VehiclePage {
         fs.writeFileSync('vehicleData.json', jsonData);
     }
 
+    // Fill the form with wrong data
     async accountCreationForm(username: string, lastName: string, email: string, zipcode: string) {
         await this.retailer.click();
         await this.username.fill(username);

@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"baseUrl": "mercedes-benz",
+		"baseUrl": "Task2",
 		"esModuleInterop": true, // needed for faker
 		"moduleResolution": "Node", // needed for faker
 		"resolveJsonModule": true, // makes more simple to handle json files for api testing

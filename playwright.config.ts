@@ -5,7 +5,7 @@ import { devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './mercedes-benz',
+  testDir: './Task2',
   /* Maximum time one test can run for. (including the parallel run!) */
   timeout: 10 * 60 * 1000, // =10min
 

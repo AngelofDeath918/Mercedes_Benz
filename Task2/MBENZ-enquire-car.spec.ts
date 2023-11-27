@@ -1,7 +1,7 @@
 // Setup
 import { test } from '@playwright/test'
 import { LocationPage } from './location-page'
-import { VehiclePage } from 'vehicle-page'
+import { VehiclePage } from './vehicle-page'
 
 test('Enquire a highest price @negative ', async ({ page }) => {
     // Page objects

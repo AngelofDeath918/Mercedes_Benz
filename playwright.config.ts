@@ -28,14 +28,25 @@ const config: PlaywrightTestConfig = {
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? [['junit', { outputFile: 'test-results/results.xml' }]] : 'html',
-
+  // Browers for the project
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...require('playwright').devices['Desktop Chromium'] }, // Chromium configuration goes here
+    },
+    {
+      name: 'firefox',
+      use: { ...require('playwright').devices['Desktop Firefox'] }, // Firefox configuration goes here
+    },
+    {
+      name: 'webkit',
+      use: { ...require('playwright').devices['Desktop WebKit'] }, // WebKit configuration goes here
+    },
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /*BaseURL for the project*/
     baseURL: 'https://shop.mercedes-benz.com',
-
-    /* Default browser for tests. To manage custom ones, edit lower in the code in 'projects' */
-    ...devices['Desktop Chromium'],
 
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 15 * 1000,

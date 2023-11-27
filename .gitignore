@@ -1,0 +1,12 @@
+# dependencies
+node_modules/
+
+# reporting
+playwright-report/
+report/
+test-results/
+
+# heavy files
+assets/
+downloads/
+payplug/plugins/woocommerce/local-temporary-assets/

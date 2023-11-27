@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"baseUrl": "mercedes-benz",
+		"esModuleInterop": true, // needed for faker
+		"moduleResolution": "Node", // needed for faker
+		"resolveJsonModule": true, // makes more simple to handle json files for api testing
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"strictNullChecks": true,
+		"strict": true
+	}
+}
